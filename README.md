@@ -1,15 +1,15 @@
-# `remark-code-import`
+# `remark-remote-code`
 
 📝 Populate code blocks from files.
 
-[![npm version](https://badge.fury.io/js/remark-code-import.svg)](https://badge.fury.io/js/remark-code-import)
+[![npm version](https://badge.fury.io/js/remark-remote-code.svg)](https://badge.fury.io/js/remark-remote-code)
 
 **Starting from v1.0.0, the plugin is now [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c). Node 12+ is needed to use it and it must be `import`ed instead of `require`d.**
 
 ## Installation
 
 ```sh
-npm install -D remark-code-import
+npm install -D remark-remote-code
 ```
 
 ## Setup
@@ -17,7 +17,7 @@ npm install -D remark-code-import
 The plugin can be imported via named export, there's no default export.
 
 ```js
-import codeImport from 'remark-code-import';
+import remoteCode from 'remark-remote-code';
 ```
 
 See [**Using plugins**](https://github.com/remarkjs/remark/blob/master/doc/plugins.md#using-plugins) for more instructions in the official documentation.
@@ -37,7 +37,7 @@ into:
 
 ````md
 ```js file=./say-hi.js
-console.log('Hello remark-code-import!');
+console.log('Hello remark-remote-code!');
 ```
 ````
 
@@ -94,7 +94,7 @@ Use the `/gatsby` endpoint. It's possible through [`to-gatsby-remark-plugin`](ht
 
 ```js
 {
-  resolve: 'remark-code-import/gatsby',
+  resolve: 'remark-remote-code/gatsby',
   options: {}
 }
 ```

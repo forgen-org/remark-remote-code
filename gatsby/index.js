@@ -1,4 +1,4 @@
 const toGatsbyRemarkPlugin = require('to-gatsby-remark-plugin');
-const codeImport = require('../');
+const remoteCode = require('../');
 
-module.exports = toGatsbyRemarkPlugin(codeImport);
+module.exports = toGatsbyRemarkPlugin(remoteCode);

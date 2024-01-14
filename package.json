@@ -1,5 +1,5 @@
 {
-  "name": "remark-code-import",
+  "name": "remark-remote-code",
   "description": "📝 Populate code blocks from files",
   "version": "1.2.0",
   "engines": {
@@ -10,10 +10,10 @@
   "types": "./dist/index.d.ts",
   "author": "Kai Hao",
   "license": "MIT",
-  "homepage": "https://github.com/kevin940726/remark-code-import#readme",
+  "homepage": "https://github.com/kevin940726/remark-remote-code#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kevin940726/remark-code-import.git"
+    "url": "git+https://github.com/kevin940726/remark-remote-code.git"
   },
   "files": [
     "dist",
@@ -41,6 +41,8 @@
     "unist-util-visit": "^4.1.0"
   },
   "devDependencies": {
+    "@types/mdast": "^4.0.3",
+    "@types/node": "^20.11.0",
     "mdast": "^3.0.0",
     "prettier": "2.5.1",
     "remark": "^14.0.2",
