@@ -8,7 +8,6 @@ interface CodeImportOptions {
   preserveTrailingNewline?: boolean;
   removeRedundantIndentations?: boolean;
   rootDir?: string;
-  allowImportingFromOutside?: boolean;
 }
 
 const remoteCode = (options: CodeImportOptions = {}) => {
@@ -49,10 +48,18 @@ const remoteCode = (options: CodeImportOptions = {}) => {
         : undefined;
       const hasDash = !!res.groups.dash || fromLine === undefined;
       const toLine = res.groups.to ? parseInt(res.groups.to, 10) : undefined;
+      const normalizedFilePath = filePath
+        .replace(/^<rootDir>/, rootDir)
+        .replace(/\\ /g, ' ');
 
       const promise = async () => {
-        const data = await fetch(`${rootDir}${filePath}`);
-        const fileContent = await data.text();
+        const response = await fetch(normalizedFilePath);
+
+        if (!response.ok) {
+          throw new Error(`Unable to fetch file at ${normalizedFilePath}`);
+        }
+
+        const fileContent = await response.text();
         node.value = extractLines(
           fileContent,
           fromLine,
