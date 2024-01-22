@@ -4,7 +4,6 @@ import type { Root, Code, Parent } from 'mdast';
 import type { VFile } from 'vfile';
 
 interface CodeImportOptions {
-  async?: boolean;
   preserveTrailingNewline?: boolean;
   removeRedundantIndentations?: boolean;
   rootDir?: string;
